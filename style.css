@@ -1,0 +1,166 @@
+
+header {
+	display: flex;
+	justify-content: center;
+}
+body {
+	padding: 20px 75px;
+}
+
+* {
+	font-family: Arial, Helvetica, sans-serif;
+}
+ul li a, ul li {
+	text-decoration: none;
+	list-style-type: none;
+}
+
+.recipes-search, .recipes-filters {
+	margin: 20px 0;
+}
+
+.recipes-search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+.recipes-search i {
+	width: 23px;
+}
+#search-input {
+	height: 55px;
+	font-size: 1em;
+	border-radius: .3em;
+	padding: 0 50px 0 20px;
+	background-color: rgba(128, 128, 128, 0.1);
+	border: none;
+	width: 100%;
+}
+#search-label {
+	position: absolute;
+	right: 15px;
+}
+
+.ingredients-tags, .utensils-tags, .appliances-tags, .recipes-tags {
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+.tag-item {
+	margin-right: 15px;
+	padding: 10px 15px;
+	border-radius: .5em;
+	color: #ffff;
+	margin: 5px 7px;
+}
+.tag-item i {
+	color: white;
+}
+.appliance-tag-item {
+	background-color: rgb(140, 219, 127);
+}
+.ingredient-tag-item {
+	background-color: rgb(21, 124, 209);
+}	
+.utensil-tag-item {
+	background-color: rgb(235, 83, 83);
+}
+
+.recipes-filters {
+	display: flex;
+}
+
+.recipes-filter {
+	position: relative;
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin-right: 15px;
+  width: 14%!important;
+}
+.recipes-filter-active {
+  width: 23%!important;
+}
+.recipes-filter-active label i {
+  transform: rotate(-180deg);
+}
+.recipes-filter i {
+	width: 15px;
+	fill: #ffff;
+}
+
+.recipes-filter ::placeholder {
+	color: #ffff;
+}
+.recipes-filter label {
+	position: absolute;
+	right: 13px;
+}
+#ingredient-filter input {
+	background-color: rgb(21, 124, 209);
+}
+#appliance-filter input {
+	background-color: rgb(140, 219, 127);
+}
+#utensil-filter input {
+	background-color: rgb(235, 83, 83);
+}
+.filter-modal-active {
+	display: flex!important;
+}
+.filter-input {
+  z-index: 1;
+	font-size: 1em;
+	padding: 15px 35px 15px 15px;
+  width: 100%;
+	height: 25px;
+	border: none;
+	border-radius: .2em;
+	color: #ffff;
+}
+.filter-input:focus {
+	outline: none;
+}
+.filter-label {
+  z-index: 2;
+}
+.filter-label i {
+  color: white;
+}
+.filter-modal {
+  z-index: 999;
+	position: absolute;
+	top: 53px;
+	width: 100%;
+}
+.filter-modal ul {
+	margin: 0;
+	padding: 0;
+	height: 400px;
+	display: none;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	list-style-type: none;
+	overflow: hidden;
+}
+.filter-modal li {
+	margin: 6px 10px;
+}
+.filter-modal li a {
+	color: #ffff;
+}
+.filter-modal li a:hover {
+	opacity: .85;
+}
+.utensil-filter-modal {
+	background-color: rgb(235, 83, 83);
+}
+.appliance-filter-modal {
+	background-color: rgb(140, 219, 127);
+}
+.ingredient-filter-modal {
+	background-color: rgb(21, 124, 209);
+}
