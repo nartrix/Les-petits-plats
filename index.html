@@ -1,66 +1,93 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./style.css" rel="stylesheet" type="text/css" />
-    <link rel="icon" href="../assets/icon.png" type="image/png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Les petits plats</title>
-    </head>
-    <body>
-        <header>
-            <img src="" alt="">
-        </header>
-        <main>
-            <section class="recipes-head">
-                <article class="recipes-search">
-                    <input id="search-input" type="text"  placeholder="Rechercher une recette">
-                    <label id="search-label" for="search-input">
-                        <a href="#" onclick="updateRecipes()">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
-                    </label>
-                </article>
-                <article class="recipes-tags">
-                    <ul class="ingredients-tags"></ul>
-                    <ul class="appliances-tags"></ul>
-                    <ul class="utensils-tags"></ul>
-                </article>
-                <article class="recipes-filters">
-                    <div id="ingredient-filter" class="recipes-filter">
-                        <input id="ingredient-input" class="filter-input" type="text" maxlength="50" placeholder="Rechercher un ingrédient">
-                        <label for="ingredient-input" class="filter-label">
-                <i class="fa-solid fa-angle-down"></i>
-                        </label>
-                        <div class="filter-modal ingredient-filter-modal">
-                            <ul></ul>
-                        </div>
-                    </div>
-                    <div id="appliance-filter" class="recipes-filter">
-                        <input id="appliance-input" class="filter-input" type="text" maxlength="50" placeholder="Rechercher un appareil">
-                        <label for="appliance-input" class="filter-label">
-                <i class="fa-solid fa-angle-down"></i>
-                        </label>
-                        <div class="filter-modal appliance-filter-modal">
-                            <ul></ul>
-                        </div>
-                    </div>
-                    <div id="utensil-filter" class="recipes-filter">
-                        <input id="utensil-input" class="filter-input" type="text" maxlength="50" placeholder="Rechercher un ustensile">
-                        <label for="utensil-input" class="filter-label">
-                <i class="fa-solid fa-angle-down"></i>
-                        </label>
-                        <div class="filter-modal utensil-filter-modal">
-                            <ul></ul>
-                        </div>
-                    </div>
-                </article>
-            </section>
-            <section class="recipes-items">
-        <p class="recipes-empty">Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson » etc..</p>
-        </section>
-        </main>
-    </body>
+    <title>Les Petits Plats</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="./assets/svg/favico.svg"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+
+  <header class="flex">
+      <img class="header-logo" src="./assets/logo.png" alt="Logo les petits plats" tabindex="1">
+  </header>
+
+  <main>
+      <section class="container-large">
+          <!-- SEARCH BAR -->
+          <div id="search-bar">
+              <input id="search-input" type="search" placeholder="Rechercher une recette">
+              <button>
+                  <img src="./assets/svg/magnifying-glass.svg" alt="icon loupe" />
+              </button>
+          </div>
+
+          <!-- SORT CONTAINER -->
+          <div id="combobox-container">
+              <!-- TAG -->
+              <div id="tag-result"></div>
+
+              <!-- COMBOBOX -->
+              <div id="combobox" class="flex">
+
+                  <div id="ingredients" class="combobox-recipe">
+                      <div class="combobox-btn" data-name="ingredients">
+                          <p class="combobox-title">Ingrédients</p>
+                          <input class="combobox-input" type="search" placeholder="Rechercher un ingrédient">
+                          <button class="icone-arrow">
+                              <img src="./assets/svg/arrow.svg" alt="icon flèche"/>
+                          </button>
+                      </div>
+                      <div class="choice">
+                          <ul id="choice-ingredients" class="options"></ul>
+                      </div>
+                  </div>
+
+                  <div id="appareils" class="combobox-recipe">
+                      <div class="combobox-btn" data-name="appareils">
+                          <p class="combobox-title">Appareils</p>
+                          <input class="combobox-input" type="search" placeholder="Rechercher un appareil" >
+                          <button class="icone-arrow">
+                              <img src="./assets/svg/arrow.svg" alt="icon flèche"/>
+                          </button>
+                      </div>
+                      <div class="choice">
+                          <ul id="choice-appareils" class="options"></ul>
+                      </div>
+                  </div>
+
+                  <div id="ustensiles" class="combobox-recipe">
+                      <div class="combobox-btn" data-name="ustensiles">
+                          <p class="combobox-title">Ustensiles</p>
+                          <input class="combobox-input" type="search" placeholder="Rechercher un ustensile" >
+                          <button class="icone-arrow">
+                              <img src="./assets/svg/arrow.svg" alt="icon flèche"/>
+                          </button>
+                      </div>
+                      <div class="choice">
+                          <ul id="choice-ustensiles" class="options"></ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+
+      </section>
+
+      <section id="recipes-container"></section>
+      <section id="error-result" class="flex"></section>
+
+  </main>
+</body>
+<!-- SCRIPT -->
+<script type="module" src="./data/recipes.js"></script>
+<script type="module" src="./scripts/index.js"></script>
 </html>
